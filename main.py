@@ -8,11 +8,17 @@ from ttkbootstrap import Style
 from ttkbootstrap.constants import *
 from ttkbootstrap.scrolled import ScrolledFrame
 
+class MyOTP:
+    def __init__(self, totp_secret, issuer, name):
+        self.totp_secret =  totp_secret
+        self.issuer = issuer
+        self.name = name
+
 # TOTP secret key obtained from Discord
-totp_secret = "JBSWY3DPEHPK3PXP"
+totp_secret = ""
 
 # Create a TOTP object
-totp = pyotp.TOTP(totp_secret)
+totp = pyotp.TOTP(totp_secret,issuer="in", name="a")
 
 # Create a Tkinter GUI window
 
